@@ -1,168 +1,450 @@
-       html, body { background: #777; padding: 20px 0; }	
-h5 { font-weight: bold; }
+// 用色定義區
+$dark: #24260f
+$bg: #f2f2e9
+$sub: #90a955
+$light: #c1d7ae
 
-		#resume-container {  
-			background: rgba(255,255,255,1); 
-			color: black !important;
-			opacity: 1 !important; 
-			margin-bottom: 40px; 
-			padding-bottom: 20px;  
-			border-radius: 7px; 
-		}
-		
-		#resume-container a { color: black; text-decoration: underline; }
-		
-		#resume-container hr { border-bottom: 2px solid black; }
-		
-		#resume-container header { 
-			background: #c3def3; 
-			padding: 40px 0 20px; 
-			position: relative;
-			z-index: 1;
-			border-top-left-radius: 7px; 
-			border-top-right-radius: 7px; 
-		}
-		
-		
-		#resume-container header:after {
-			background: inherit;
-			content: '';
-			display: block;
-			height: 50%;
-			left: 0;
-			position: absolute;
-			right: 0;
-			z-index: -1;
-			-webkit-backface-visibility: hidden;
-		}
-		
-		
-		#resume-container header:after {
-		  bottom: 0;
-		  -webkit-transform: skewY(-2.5deg);
-				  transform: skewY(-2.5deg);
-		  -webkit-transform-origin: 100%;
-				  transform-origin: 100%;
-		}
+//字體定義區
+$fmh: lato
+$fmp: karla
+$base-size: 10px
 
-		#resume-container header .resume-portfolio-pic { border-radius: 50%; height: 200px; width: 200px; margin: 0 auto; display: block; }
+//mixin設定區
+@mixin abso
+  position: absolute
+  
+@mixin ib
+  display: inline-block
 
-		.resume-name { text-align: center; color: white; padding-top: 50px; }
-		
-		#resume-container .contact-info { text-align: center; padding: 10px 0; margin: 20px 0; color: white; }
-		#resume-container .contact-info a  { color: white; }
-		
-		
-		#resume-container #summary { padding: 50px 10px 0; }
-		#resume-container #summary .summary { padding: 0 20px; }
-		
-		#resume-container .skill-text { text-align: center; }
-		
-		#resume-container .contact-info .email, #resume-container .contact-info .phone { margin-bottom: 20px; }
-		
-		
-		#experience { padding: 0 20px; }
-		
-		#experience h2, #experience h3, #experience h4 { margin: 0 !important; }
-	
-		#experience .past-employer { padding: 20px 0; }
-		#experience .employer-img { display: block; margin: 0 auto; padding-top: 20px; }
-		#experience .short-description { /* padding-top: 20px; */ }
-		
-		
-		#education { padding: 0 20px; }
-		
-		#education .past-school { padding: 20px 0; }
-		
-		#education .past-school .left { text-align: center; }
-		
-		#computers { padding: 0 20px; }
-		
-		
-		#resume-container .pills { padding-left: 0; }
-		#resume-container .pills a { color: black; }
-		#resume-container .pills li { 
-			box-shadow: 0px 1px 1px #CCC;
-			transition: all 0.07s ease 0s;
-			display: inline-block;
-			border: 0px none;
-			margin: 0px 5px 5px 0px;
-			padding: 0px;
-			font-size: 13px;
-			line-height: 17px;
-			color: black;
-			font-weight: normal;
-			background: #F1F1F1 none repeat scroll 0% 0%;
-			border-radius: 2px;
-			text-decoration: none;
-		}
-		#resume-container .pills li .wrap {
-			display: inline-block;
-			padding: 5px 10px 4px;
-		}
-		
-		#references { padding: 0 20px; margin: 20px 0; text-align: center; }
-		
-		
-		
-		#resume-container .linkedin-link { margin-bottom: 10px; }
-		#resume-container .linkedin-link span { display: block; color: black; text-align: center; }
-		
-		
+@mixin center
+  position: absolute
+  top: 50%
+  left: 50%
+  transfrom: translateX(-50%) translateY(-50%)
+  
+@mixin size($w,$h)
+  width: $w
+  height: $h
+  
+@mixin t-dr
+  transition-duration: 0.5s
+  
+@mixin t-dl
+  transition-delay: 0.5s
+  
+@mixin clear
+  opacity: 0
+
+@mixin unclear
+  opacity: 1
+  
+//CSS開始
 
 
+*
+  // border: solid 1px white
+  vertical-align: top
+  box-sizing: border-box
+  background-color: $bg
+  color: $dark
+  font-family: $fmh, sans-serif
+  font-weight: 300
+  line-height: 36px
+  +t-dr
+
+html,body
+  margin: 0px
+  padding: 0px
+  width: 100%
 
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	~~~~~MEDIA QUERIES~~~~
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-	@media only screen and ( min-width: 1100px ) and ( max-width: 1405px) {
-		
-	}
-	
-	@media only screen and ( min-width: 992px ) {
-		#experience .col-md-7 { border-left: 2px solid black; }
-		#education .col-md-8 { border-left: 2px solid black; }
-	}
-	
-	
-	@media only screen and (max-width: 1200px) {
-		
-	}
-	
-	
-	@media only screen and (max-width: 990px) {
-	
-		.past-employer { border-bottom: 1px solid #dedede; margin-bottom: 20px; }
-		.past-employer:last-child { border-bottom: none; margin-bottom: 0; }
-		
-		.past-school { border-bottom: 1px solid #dedede; }
-		.past-school:last-child { border-bottom: none !important; }
-		
-		#references .col-md-4 { margin-bottom: 20px; }
-		
-		#experience .employer-img { padding-top: 0; max-width: 200px; }
-		
-		
-	}
-	
-	@media only screen and (max-width: 960px) {
-		
-	}
-	
-	@media only screen and ( max-width: 768px ) {
-		
-	}
-		
-	@media only screen and (max-width: 665px) {
-		.specializations ul { padding-left: 0; }
-		.skill-text { margin-bottom: 0; }
-	}
-		
-	@media only screen and (max-width: 567px) {
-		#computers ul { padding-left: 10px; }
-	}
-	
-	@media only screen and (max-width: 420px) {
-		#extra-skills { display: none; }
-	}
+.top
+  height: 300px
+  background-color: #24260f
+
+
+.top-content
+  +size(1027px,300px)
+  background-color: $dark
+  margin-right: auto
+  margin-left: auto
+
+  
+.photo
+  +size(200px,275px)
+  +ib
+  margin-top: 20px
+  margin-left: 300px
+  background-color: $dark
+
+  
+  h1
+    text-align: center
+    font-weight: 500
+    font-size: 30px
+    position: relative
+    bottom: 15px
+    background-color: $dark
+    color: $bg
+    margin-top: 30px
+
+
+img
+  +size(200px,200px)
+  border-radius: 100%
+  
+
+.info
+  +size(450px,275px)
+  margin-top: 20px
+  background-color: $dark
+
+
+.photo,.info
+  +ib
+
+.title
+  +size(350px,80px)
+  margin-left: 50px
+  padding-top: 15px
+  text-align: center
+  font-size: 26px
+  line-height: 80px
+  border-bottom: solid 3px $sub
+  background-color: $dark
+  color: $bg
+
+
+.contact
+  +ib
+  margin-left: 50px
+  margin-top: 20px
+
+.url
+  padding-left: 10px
+  padding-top: 10px
+  background-color: $dark
+  color: $bg
+  & span
+    line-height: 36px
+    font-family: $fmp, sans-serif
+    padding-left: 10px
+    background-color: $dark
+    color: $bg
+
+.max-width
+  width: 1027px
+  margin-right: auto
+  margin-left: auto
+
+.left,.right
+  +ib
+  +size(49%,700px)
+
+.con-title
+  +size(450px,50px)
+  font-weight: 900
+  font-size: $base-size*2
+  color: $sub
+  margin-left: 30px
+  margin-top: 30px
+  padding-top: 15px
+  border-bottom: solid 1px $dark
+
+.ex-con-left
+  +ib
+  +size(50px,250px)
+  margin-left: 30px
+  & .dot
+    +size(10px,10px)
+    border-radius: 100%
+    background-color: $dark
+    margin-left: 20px
+    margin-top: 30px
+  & .vertical-line
+    +size(3px,170px)
+    border-radius: 10%
+    background-color: $sub
+    margin-left: 24px
+    margin-top: 5px
+
+.ex-con-right
+  +ib
+  +size(400px,250px)
+  & h3
+    margin: 10px
+    margin-top: 20px
+    font-size: $base-size*2
+    font-weight: bold
+    line-height: 20px
+  & h5
+    margin: 10px
+    font-size: $base-size*2
+    font-weight: bold
+    color: $sub
+  & span
+    font-size: $base-size*1.6
+    color: $dark
+    margin: 10px
+  & p
+    margin: 10px 10px 0px 10px
+    line-height: 20px
+    font-size: $base-size*1.6
+  & br
+    line-height: 26px
+    
+.ed-con-left
+  +ib
+  +size(50px,250px)
+  margin-left: 30px
+  & .dot
+    +size(10px,10px)
+    border-radius: 100%
+    background-color: $dark
+    margin-left: 20px
+    margin-top: 30px
+  & .vertical-line
+    +size(3px,170px)
+    border-radius: 10%
+    background-color: $sub
+    margin-left: 24px
+    margin-top: 5px
+
+.ed-con-right
+  +ib
+  +size(400px,250px)
+  & h3
+    margin: 10px
+    margin-top: 20px
+    font-size: $base-size*2
+    font-weight: bold
+    line-height: 20px
+  & h5
+    margin: 10px
+    font-size: $base-size*2
+    font-weight: bold
+    color: $sub
+  & span
+    font-size: $base-size*1.6
+    color: $dark
+    margin: 10px
+  & p
+    margin: 10px 10px 0px 10px
+    line-height: 20px
+    font-size: $base-size*1.6
+  & br
+    line-height: 26px
+  
+
+
+.languages
+  height: 250px
+
+.la-title
+  margin-left: 10px
+
+.chinese
+  +size(150px,150px)
+  +ib
+  border-radius: 100%
+  overflow: hidden
+  margin: 30px 15px 0px 10px
+  border: solid 5px $sub
+  h3
+    text-align: center
+    margin-top: 40px
+    font-weight: bold
+    font-size: $base-size*1.6
+  h4
+    text-align: center
+    margin-top: -20px
+    color: $sub
+
+.outer-jp
+  +size(150px,150px)
+  +ib
+  background: $light
+  border-radius: 100%
+  position: relative
+  overflow: hidden
+  margin-top: 30px
+
+.sq1-jp
+  +size(150px,150px)
+  +abso
+  left: 75px
+  background-color: $sub
+
+.sq2-jp
+  +size(75px,75px)
+  +abso
+  top: 75px
+  background-color: $sub
+
+.sq3-jp
+  +size(75px,75px)
+  background-color: $sub
+  transform-origin: bottom
+  transform: skewX(36deg)
+  
+.inner-jp
+  +size(140px,140px)
+  +abso
+  border-radius: 100%
+  top: 5px
+  left: 5px
+  background-color: $bg
+  overflow: hidden
+  & h3
+    text-align: center
+    margin-top: 40px
+    font-weight: bold
+    font-size: $base-size*1.6
+  & h4
+    text-align: center
+    margin-top: -20px
+    color: $sub
+
+
+
+.outer-eng
+  +size(150px,150px)
+  +ib
+  background: $light
+  border-radius: 100%
+  position: relative
+  overflow: hidden
+  margin-top: 30px
+  margin-left: 10px
+
+.sq1-eng
+  +size(150px,150px)
+  +abso
+  left: 75px
+  background-color: $sub
+
+
+.sq2-eng
+  +size(75px,75px)
+  +abso
+  top: 75px
+  background-color: $sub
+
+.inner-eng
+  +size(140px,140px)
+  +abso
+  border-radius: 100%
+  top: 5px
+  left: 5px
+  background-color: $bg
+  overflow: hidden
+  h3
+    text-align: center
+    margin-top: 40px
+    font-weight: bold
+    font-size: $base-size*1.6
+  h4
+    text-align: center
+    margin-top: -20px
+    color: $sub
+
+.skills
+  height: 200px
+
+
+.sk-title
+  margin-left: 10px
+  margin-top: 0px
+
+.skill-con-left,.skill-con-right
+  +ib
+  +size(230px,130px)
+  margin-top: 20px
+
+.skill-bar
+  span
+    +ib
+    font-weight: bold
+    margin-left: 10px
+    width: 90px
+
+.skill-level
+  +ib
+  margin-left: 10px
+
+.yes
+  +ib
+  +size(15px,15px)
+  border-radius: 100%
+  background-color: $sub
+  margin-top: 10px
+  margin-right: 2px
+
+.no
+  +ib
+  +size(15px,15px)
+  border-radius: 100%
+  background-color: $light
+  margin-top: 10px
+  margin-right: 2px
+
+.portfolio
+  height: 200px
+  
+
+.po-con-right
+  +ib
+  +t-dr
+  +size(150px,160px)
+  margin-left: 10px
+  padding-top: 10px
+  opacity: 0.5
+  position: relative
+  top: 0px
+  & span
+    +ib
+    font-weight: bold
+    width: 100px
+    text-align: center
+  &:hover
+    opacity: 1
+  &:active
+    top: 10px
+  
+
+.po-con-middle
+  +ib
+  +size(150px,160px)
+  margin-left: 10px
+  padding-top: 10px
+  opacity: 0.5
+  position: relative
+  top: 0px
+  & span
+    +ib
+    font-weight: bold
+    width: 100px
+    text-align: center
+  &:hover
+    opacity: 1
+  &:active
+    top: 10px
+  
+.po-con-left
+  +ib
+  +size(150px,160px)
+  margin-left: 10px
+  padding-top: 10px
+  opacity: 0.5
+  position: relative
+  top: 0px
+  & span
+    +ib
+    font-weight: bold
+    width: 100px
+    text-align: center
+    padding-right: 15px
+  &:hover
+    opacity: 1
+  &:active
+    top: 10px
