@@ -2,7 +2,7 @@
 
 I am Nazar Kinasevych.
 A Full Stack Developer,
-who loves web development
+who loves web development :)
 
 ## Repositories
 
