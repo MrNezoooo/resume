@@ -1,6 +1,6 @@
-#Hello, WORLD
+# Hello, WORLD
 
-I am Farishta Haider.
+I am Nazar Kinasevych.
 A Full Stack Developer,
 who loves tech web development
 
